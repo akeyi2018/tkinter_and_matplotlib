@@ -53,23 +53,23 @@ class Application(tk.Frame):
         # レイアウトを更新
         self.master.update_idletasks()
 
-        # # フレームの右端と下端を計算
-        # frames = [self.frame_lbl]
-        # max_width = 0
-        # max_height = 0
+        # フレームの右端と下端を計算
+        frames = [self.input.label_frame]
+        max_width = 0
+        max_height = 0
 
-        # for frame in frames:
-        #     x = frame.winfo_x()
-        #     y = frame.winfo_y()
-        #     width = frame.winfo_width()
-        #     height = frame.winfo_height()
+        for frame in frames:
+            x = frame.winfo_x()
+            y = frame.winfo_y()
+            width = frame.winfo_width()
+            height = frame.winfo_height()
 
-        #     # 右端と下端の最大値を計算
-        #     max_width = max(max_width, x + width)
-        #     max_height = max(max_height, y + height)
+            # 右端と下端の最大値を計算
+            max_width = max(max_width, x + width)
+            max_height = max(max_height, y + height)
 
-        max_width = 400
-        max_height = 300
+        # max_width = 400
+        # max_height = 300
         # 親ウィンドウのサイズを調整
         self.master.geometry(f"{max_width + 20}x{max_height + 20}")  # 余白を追加
 
