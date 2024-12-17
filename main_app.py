@@ -2,7 +2,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 
 # from app_model import Zaiko, Money, Auto_machine
-from app_view import InputData
+from health import InputData
 # from backyard import Backyard
 
 class Application(tk.Frame):
