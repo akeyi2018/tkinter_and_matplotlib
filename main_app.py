@@ -68,10 +68,11 @@ class Application(tk.Frame):
             max_width = max(max_width, x + width)
             max_height = max(max_height, y + height)
 
-        # max_width = 400
-        # max_height = 300
+        self.w = int(self.master.winfo_screenwidth()/2) - max_width
+        self.h = int(self.master.winfo_screenheight()/2) - max_height
+
         # 親ウィンドウのサイズを調整
-        self.master.geometry(f"{max_width + 20}x{max_height + 20}")  # 余白を追加
+        self.master.geometry(f"{max_width + 20}x{max_height + 20}+{self.w}+{self.h}")  # 余白を追加
 
 if __name__ == '__main__':
     root = tk.Tk()
