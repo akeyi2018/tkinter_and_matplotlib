@@ -3,7 +3,7 @@ import tkinter.ttk as ttk
 
 # from app_model import Zaiko, Money, Auto_machine
 from health import InputData
-# from backyard import Backyard
+from app_view import Graph
 
 class Application(tk.Frame):
 
@@ -16,6 +16,9 @@ class Application(tk.Frame):
 
         # input data UI
         self.input = InputData(self)
+
+        # グラフ表示
+        self.graph = Graph(self)
 
         # # 商品リスト
         # self.auto_machine = Auto_machine()
@@ -34,10 +37,7 @@ class Application(tk.Frame):
 
         self.adjust_window_size()
 
-    def initial_money(self):
-        self.m_money = Money()
-        self.v_money = VMoney(self)
-
+  
     def maintenance_button(self):
         self.frame_lbl = tk.LabelFrame(root, text='メンテナンス', bd=2, relief=tk.GROOVE, padx=10, pady=10)
         self.frame_lbl.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
@@ -45,16 +45,13 @@ class Application(tk.Frame):
         self.total_sales = tk.Button(self.frame_lbl, text="maintenance", font=self.font, command=self.mainte)
         self.total_sales.grid(padx=5,pady=5)
 
-    def mainte(self):
-        back_yard = Backyard(self)
-        back_yard.open_sub_window()
 
     def adjust_window_size(self):
         # レイアウトを更新
         self.master.update_idletasks()
 
         # フレームの右端と下端を計算
-        frames = [self.input.label_frame]
+        frames = [self.graph.label_frame]
         max_width = 0
         max_height = 0
 

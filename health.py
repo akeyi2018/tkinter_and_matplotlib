@@ -14,7 +14,7 @@ class InputData:
 
         # フレーム
         self.label_frame = tk.LabelFrame(self.root, text='血圧データ入力', bd=2, relief=tk.GROOVE, padx=10, pady=10)
-        self.label_frame.grid(column=1, row=0, padx=20, pady=10, sticky="nsew")
+        self.label_frame.grid(column=0, row=0, padx=20, pady=10, sticky="nsew")
 
         row = 0
 
