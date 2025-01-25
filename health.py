@@ -25,7 +25,7 @@ class InputData:
         row += 1
 
         # 収縮期
-        self.high_bld = ttk.Scale(self.label_frame, from_=110, to= 180, value=140,  command=self.set_val_high, length=140)
+        self.high_bld = ttk.Scale(self.label_frame, from_=100, to= 180, value=140,  command=self.set_val_high, length=140)
         self.high_bld.grid(column=1,row=row, padx=10,pady=10)
 
 
